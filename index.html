@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <form action="login.php" method="POST"> <!-- Suponiendo que tienes un archivo login.php -->
+            <h1>Inicio</h1>
+            <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="email" id="email" name="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="inputbox"> 
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" id="password" name="password" required>
+                <label for="password">Contraseña</label>
+            </div>
+            <div class="forget">
+                <label for="remember-me"><input type="checkbox" id="remember-me"> Recuerdame</label>
+                <a href="#">Olvidé mi Contraseña</a>
+            </div>
+            <button type="submit">Log in</button>
+            <div class="register">
+                <p>No tengo cuenta <a href="register.php"> Registrate</a></p> <!-- Corregido el enlace -->
+            </div>
+        </form>
+
+        <div id="task-container" style="display: none;">
+            <h2>Tareas Asignadas</h2>
+            <div id="task-list"></div>
+            <div class="inputbox">
+                <input type="text" id="task-input" placeholder="Agregar nueva tarea">
+                <button id="add-task-button">Agregar Tarea</button>
+            </div>
+            <div id="progress-container">
+                <div id="progress-bar" style="background-color: rgba(255, 255, 255, 0.5); border-radius: 20px; height: 20px; width: 100%; margin-top: 10px;">
+                    <div id="progress-fill" style="background-color: rgba(0, 255, 0, 0.7); height: 100%; width: 0%; border-radius: 20px;"></div>
+                </div>
+                <span id="progress-percentage">0%</span>
+            </div>
+        </div>
+
+        <div id="message-container" style="display: none;">
+            <p id="message" style="color: red;"></p> <!-- Mensaje de error o éxito -->
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
